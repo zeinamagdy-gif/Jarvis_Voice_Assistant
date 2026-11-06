@@ -1,2 +1,3 @@
 2026-11-06 02:45:48,501 Imported existing <module 'comtypes.gen' from 'C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
 2026-11-06 02:45:48,501 Using writeable comtypes cache directory: 'C:\Users\DELL\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2026-11-06 03:38:06,564 HTTP Request: GET https://huggingface.co/api/models/Systran/faster-whisper-base/revision/main "HTTP/1.1 200 OK"

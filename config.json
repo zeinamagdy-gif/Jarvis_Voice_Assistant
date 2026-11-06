@@ -1,5 +1,5 @@
 {
-  "wake_words": ["jarvis", "jarvas", "travis", "service","jar"],
+  "wake_words": ["jarvis", "jarvas", "travis", "service", "jar"],
   "language": "en-US",
   "whisper_model": "base",
   "whisper_language": "en",
@@ -15,8 +15,8 @@
     "gmail": "https://mail.google.com"
   },
   "apps": {
-  "spotify": {"windows": "spotify:", "mac": "Spotify", "linux": "spotify"},
-  "notepad": {"windows": "notepad.exe"},
-  "calculator": {"windows": "calc.exe", "mac": "Calculator", "linux": "gnome-calculator"}
-}
+    "spotify": { "windows": "spotify:", "mac": "Spotify", "linux": "spotify" },
+    "notepad": { "windows": "notepad.exe", "mac": "TextEdit", "linux": "gedit" },
+    "calculator": { "windows": "calc.exe", "mac": "Calculator", "linux": "gnome-calculator" }
+  }
 }

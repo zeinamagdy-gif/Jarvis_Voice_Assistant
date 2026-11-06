@@ -4,7 +4,20 @@ from core import CONFIG, brain
 from skills import load_skills, dispatch
 import logging
 from core import ROOT
+from interpreter import interpreter
 
+# Configure it to use your local Ollama or Claude
+interpreter.llm.model = "ollama/llama3.2"
+# OR interpreter.llm.api_key = "your_anthropic_key"
+
+# Let it control the laptop safely
+interpreter.auto_run = True # WARNING: Only use if you trust the safety guardrails!
+
+def respond_with_agent(command):
+    # Open Interpreter will write Python code, execute it on your laptop,
+    # and return the result.
+    result = interpreter.chat(command)
+    return result
 logging.basicConfig(filename=ROOT / "jarvis.log", level=logging.INFO,
                     format="%(asctime)s %(message)s")
 logging.getLogger("comtypes").setLevel(logging.WARNING)   # hides the noisy startup lines
@@ -34,14 +47,23 @@ def find_wake_word(heard):
 
 
 def respond(command):
+    # 1. Check your local skills first (time, date, etc.)
     reply = dispatch(command)
-    if reply is None:
-        try:
-            reply = brain.ask(command)
-        except Exception as e:
-            print("Error:", e)
-            reply = "Sorry, my brain is not responding."
-    return reply
+    if reply is not None:
+        return reply
+
+    # 2. If no local skill, send to the Agentic Processor
+    try:
+        # If using the custom processor from Step 2:
+        reply = ask_ai_agentic(command, history)
+
+        # OR if using Open Interpreter:
+        # reply = interpreter.chat(command)
+
+        return reply
+    except Exception as e:
+        print("Error:", e)
+        return "Sorry Mr. Stark, my processor is encountering an error."
 
 
 def main():
