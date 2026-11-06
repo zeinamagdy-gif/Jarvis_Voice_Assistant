@@ -1,0 +1,22 @@
+{
+  "wake_words": ["jarvis", "jarvas", "travis", "service","jar"],
+  "language": "en-US",
+  "whisper_model": "base",
+  "whisper_language": "en",
+  "brain": "ollama",
+  "ollama_model": "llama3.2",
+  "claude_model": "claude-sonnet-5-5",
+  "speech_rate": 175,
+  "system_prompt": "You are Jarvis, a helpful voice assistant. Keep answers short (1-3 sentences) because they will be spoken aloud.",
+  "sites": {
+    "youtube": "https://www.youtube.com",
+    "github": "https://github.com",
+    "google": "https://www.google.com",
+    "gmail": "https://mail.google.com"
+  },
+  "apps": {
+  "spotify": {"windows": "spotify:", "mac": "Spotify", "linux": "spotify"},
+  "notepad": {"windows": "notepad.exe"},
+  "calculator": {"windows": "calc.exe", "mac": "Calculator", "linux": "gnome-calculator"}
+}
+}
